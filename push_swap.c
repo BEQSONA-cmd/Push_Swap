@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:27 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/04 19:34:20 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/04 20:49:39 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ void	one_arg(char *av)
 	while (c[i] != NULL)
 		i++;
 	push_swap(c, i);
+	i = 0;
+	while (c[i] != NULL)
+	{
+		free(c[i]);
+		i++;
+	}
+	free(c);
 }
 
 int	main(int ac, char **av)
@@ -80,6 +87,7 @@ int	main(int ac, char **av)
 			i++;
 		}
 		push_swap(c, i);
+		free(c);
 		return (0);
 	}
 	else
