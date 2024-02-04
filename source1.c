@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:24:26 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/03 20:24:13 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/04 20:06:42 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ int	ft_push(t_node *node, int len, int witch)
 		p_b(node);
 	else
 		p_a(node);
-	return (len--);
+	len--;
+	return (len);
 }
 
 void	error(int *a)
 {
 	free(a);
-	ft_printf(RED "ERROR\n" RESET);
+	ft_printf("Error\n");
 	exit(1);
 }
 
@@ -40,10 +41,7 @@ void	if_doubles(int *a, int size)
 		while (j < size)
 		{
 			if (a[i] == a[j])
-			{
-				ft_printf(BLUE "Double Numbers: (%d) " RESET, a[i]);
 				error(a);
-			}
 			j++;
 		}
 		i++;
@@ -102,5 +100,5 @@ void	r_r_r(t_node *node)
 		i--;
 	}
 	node->b[i] = j;
-	ft_printf(BLUE "rrr\n" RESET);
+	ft_printf("rrr\n");
 }

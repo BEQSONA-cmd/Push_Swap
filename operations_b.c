@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 12:03:54 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/03 20:23:16 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:24:38 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	s_b(t_node *node)
 	i = node->b[0];
 	node->b[0] = node->b[1];
 	node->b[1] = i;
-	ft_printf(GREEN "sb\n" RESET);
+	ft_printf("sb\n");
 }
 
 void	p_b(t_node *node)
@@ -46,7 +46,7 @@ void	p_b(t_node *node)
 			node->a[i] = node->a[i + 1];
 			i++;
 		}
-		ft_printf(GREEN "pb\n" RESET);
+		ft_printf("pb\n");
 	}
 	else
 		return ;
@@ -68,7 +68,7 @@ void	r_b(t_node *node)
 		i++;
 	}
 	node->b[i - 1] = j;
-	ft_printf(GREEN "rb\n" RESET);
+	ft_printf("rb\n");
 }
 
 void	r_r_b(t_node *node)
@@ -86,7 +86,7 @@ void	r_r_b(t_node *node)
 		i--;
 	}
 	node->b[i] = tmp;
-	ft_printf(GREEN "rrb\n" RESET);
+	ft_printf("rrb\n");
 }
 
 void	r_r(t_node *node)
@@ -113,5 +113,5 @@ void	r_r(t_node *node)
 		i++;
 	}
 	node->b[i - 1] = j;
-	ft_printf(BLUE "rr\n" RESET);
+	ft_printf("rr\n");
 }
