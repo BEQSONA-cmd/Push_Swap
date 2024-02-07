@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 19:20:16 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/04 19:10:18 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:25:24 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(char *a)
 {
-	ft_printf(RED "%s\n" RESET, a);
+	ft_printf("%s\n", a);
 	exit(1);
 }
 

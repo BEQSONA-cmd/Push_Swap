@@ -1,16 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:27 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/07 14:54:24 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/07 21:15:34 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_free(int *x, int size)
+{
+	int	i;
+
+	i = 0;
+	while (x[i])
+		i++;
+	if (i == size)
+		return (1);
+	else
+		return (0);
+}
+
+void	check_swap(char **av, int size)
+{
+	int	*x;
+
+	x = push_swap(av, size);
+	if (if_sorted(x, size, 0) != 0 && check_free(x, size) != 0)
+		ft_printf("[OK]\n");
+	else
+		ft_printf("[KO]\n");
+	free(x);
+}
 
 int	main(int ac, char **av)
 {
@@ -31,7 +56,7 @@ int	main(int ac, char **av)
 			c[i] = av[i + 1];
 			i++;
 		}
-		push_swap(c, i);
+		check_swap(c, i);
 		free(c);
 		return (0);
 	}

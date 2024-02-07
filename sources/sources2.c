@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:50:50 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/04 19:10:22 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:25:50 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ int	ft_atoi(const char *str)
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
-			ft_error("Not A Digit");
+			ft_error("Error");
 		x = x * 10 + (str[i] - '0');
 		i++;
 	}
 	if (x > 2147483648)
-		ft_error("Bigger Then Int");
+		ft_error("Error");
 	return (x * s);
 }

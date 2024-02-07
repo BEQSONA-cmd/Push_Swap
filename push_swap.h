@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:55 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/04 19:34:27 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:34:07 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_node
 }		t_node;
 
 void	error(int *a);
+void	one_arg(char *av);
 void	s_a(t_node *node);
 void	p_a(t_node *node);
 void	r_a(t_node *node);
@@ -36,10 +37,12 @@ void	r_r_a(t_node *node);
 void	r_r_b(t_node *node);
 void	r_r_r(t_node *node);
 void	sort_3a(t_node *node);
+void	sorting(t_node *a, int size);
 void	if_doubles(int *a, int size);
 int		sort_3b(t_node *node, int len);
-void	sort_3ab(t_node *node, int len);
+int		*push_swap(char **av, int size);
 void	buble_sort(int *node, int size);
+void	sort_3ab(t_node *node, int len);
 int		if_sorted(int *a, int size, int order);
 int		mediane(int *med, int *node, int size);
 int		ft_push(t_node *node, int len, int witch);
