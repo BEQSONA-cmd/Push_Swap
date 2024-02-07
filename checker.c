@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:27 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/07 21:15:34 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/07 22:06:23 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	check_free(int *x, int size)
 	while (x[i])
 		i++;
 	if (i == size)
-		return (1);
-	else
 		return (0);
+	else
+		return (1);
 }
 
 void	check_swap(char **av, int size)
