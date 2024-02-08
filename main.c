@@ -194,7 +194,6 @@ int	ft_push1(t_node *node, int len, int witch)
 		p_a1(node);
 		display_algo1(node->a, 0);
 	}
-	len--;
 	return (len);
 }
 
@@ -444,9 +443,11 @@ int	sort_3b1(t_node *node, int len)
 			}
 			else if (len == 1 || (len >= 2 && node->b[0] > node->b[1])
 				|| (len == 3 && node->b[0] > node->b[2]))
-				len = ft_push1(node, len, 1);
+				len = ft_push1(node, len, 1) - 1;
 			else
 			{
+				if (len == 0)
+					return (0);
 				s_b1(node);
 				display_algo1(node->a, 0);
 			}
@@ -476,7 +477,7 @@ void	sort_3a1b1(t_node *node, int len)
 			}
 			else if (len == 3 && !(node->a[2] > node->a[0]
 					&& node->a[2] > node->a[1]))
-				len = ft_push1(node, len, 0);
+				len = ft_push1(node, len, 0) - 1;
 			else if (node->a[0] > node->a[1])
 			{
 				s_a1(node);
@@ -725,14 +726,14 @@ int	main(void)
 {
 	int			i;
 	t_node		node;
-	int			x[101] = {25, -11, 46, -38, 5, -20, -22, -12, -37, 32, 26, -7,
-					-49, 17, -48, -33, -50, -25, 50, -15, -9, 33, 28, -40, -6,
-					29, -45, -14, -43, -3, -35, 47, 6, 3, -31, -27, 13, 31, 9,
-					49, -17, 42, 36, -19, 14, 18, 8, 35, -26, -39, 0, 39, -2,
-					-1, -13, -28, 2, -46, 10, 22, -32, 45, -30, 48, 16, 41, -47,
-					-10, -5, 43, 20, 4, 27, -4, 38, 40, -42, -8, 30, -36, -44,
-					34, 15, -24, 11, -16, -23, -18, 24, 44, 1, -29, 12, 23, 21,
-					-34, 7, 37, 19, -21, -41};
+	int			x[101] = {32, -10, 38, -12, 7, 1, -50, -20, -48, 47, -47, -28,
+					17, 39, -5, -16, -46, 4, 8, -23, 6, -9, -26, -36, 37, 15,
+					27, 2, 28, -33, 30, 50, 33, -38, -3, 5, -44, -40, 44, 45,
+					19, -49, 48, -29, -27, -39, 3, -18, -14, 14, 23, 31, -4, 26,
+					18, -19, 0, 42, 35, -13, -22, -2, -24, 24, -25, -11, 13, -6,
+					-45, 43, -30, -41, 12, 16, -32, -21, -15, -7, 20, 9, 49, 29,
+					21, 34, 36, -43, -35, 11, 46, -17, 22, -34, 41, -31, -37,
+					25, 10, 40, -42, -8, -1};
 	const char	*files[] = {"..sources/printf.h", "..sources/printf.c",
 			"..sources/ft_split.c", "..sources/sources1.c",
 			"..sources/sources2.c", "checker_src.c", "checker.c",
@@ -762,6 +763,9 @@ int	main(void)
 			st = EXIT_FAILURE;
 		}
 	}
+	printf(GREEN "\n[RANDOM DIFFERENT NUMBER VALUES]\n" RESET);
+	display_algo1(node.a, 0);
+	usleep(5000000);
 	sorting1(&node, 101);
 	display_algo1(node.a, 1);
 	if (st == EXIT_SUCCESS)

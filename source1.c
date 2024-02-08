@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:24:26 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/07 21:28:33 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:55:48 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_push(t_node *node, int len, int witch)
 		p_b(node);
 	else
 		p_a(node);
-	len--;
 	return (len);
 }
 

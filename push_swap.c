@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:27 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/07 14:54:24 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:55:38 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int ac, char **av)
 {
 	int		i;
 	char	**c;
+	int		*x;
 
 	i = 1;
 	if (ac == 2)
@@ -31,11 +32,10 @@ int	main(int ac, char **av)
 			c[i] = av[i + 1];
 			i++;
 		}
-		push_swap(c, i);
+		x = push_swap(c, i);
+		free(x);
 		free(c);
 		return (0);
 	}
-	else
-		write(1, "\n", 1);
 	return (0);
 }
