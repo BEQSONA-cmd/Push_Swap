@@ -765,7 +765,7 @@ int	main(void)
 	}
 	printf(GREEN "\n[RANDOM DIFFERENT NUMBER VALUES]\n" RESET);
 	display_algo1(node.a, 0);
-	usleep(5000000);
+	usleep(1800000);
 	sorting1(&node, 101);
 	display_algo1(node.a, 1);
 	if (st == EXIT_SUCCESS)
