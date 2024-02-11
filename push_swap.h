@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:55 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/08 20:55:41 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:43:33 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,21 @@ void	s_b(t_node *node);
 void	p_b(t_node *node);
 void	r_b(t_node *node);
 void	s_s(t_node *node);
-void	r_r(t_node *node);
 void	r_r_a(t_node *node);
 void	r_r_b(t_node *node);
-void	r_r_r(t_node *node);
+void	b_s_a(t_node *node);
+void	b_p_a(t_node *node);
+void	b_r_a(t_node *node);
+void	b_s_b(t_node *node);
+void	b_p_b(t_node *node);
+void	b_r_b(t_node *node);
+void	b_s_s(t_node *node);
+void	b_r_r(t_node *node);
+void	b_r_r_a(t_node *node);
+void	b_r_r_b(t_node *node);
+void	b_r_r_r(t_node *node);
 void	sort_3a(t_node *node);
+void	ft_errors(t_node *node);
 void	sorting(t_node *a, int size);
 void	if_doubles(int *a, int size);
 int		sort_3b(t_node *node, int len);

@@ -1,7 +1,9 @@
 NAME = push_swap
 B_NAME = checker
 
-SRC = sources/ft_printf.c\
+SRC = sources/get_next_line_utils.c\
+	sources/get_next_line.c\
+	sources/ft_printf.c\
 	sources/sources1.c\
 	sources/sources2.c\
 	sources/ft_split.c\
@@ -9,6 +11,8 @@ SRC = sources/ft_printf.c\
 	operations_b.c\
 	checker_src.c\
 	quicksort.c\
+	bonus_op1.c\
+	bonus_op.c\
 	source1.c\
 	sort_3.c
 
@@ -32,6 +36,12 @@ bonus:	$(OBJ) $(B_OBJ)
 	ar rc $(B_NAME) $(OBJ) $(B_OBJ)
 	$(CC) $(CFLAGS) $(B_NAME) checker.c -o $(B_NAME)
 
+test: $(NAME)
+	$(CC) $(CFLAGS) main.c
+	make clean
+	clear
+	./a.out
+
 clean:
 	rm -f $(OBJ)
 	rm -f $(B_OBJ)
@@ -43,9 +53,3 @@ fclean: clean
 re: fclean $(NAME)
 
 .PHONY:	all clean fclean re bonus
-
-test: $(NAME)
-	$(CC) $(CFLAGS) main.c
-	make clean
-	clear
-	./a.out

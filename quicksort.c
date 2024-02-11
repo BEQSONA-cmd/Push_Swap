@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:14:40 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/08 20:55:42 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:21:51 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	mediane(int *med, int *node, int size)
 	int	*j;
 
 	i = 0;
-	j = malloc(sizeof(int *) * size);
+	j = malloc(sizeof(int) * size);
 	if (!j)
 		return (0);
 	while (i < size)

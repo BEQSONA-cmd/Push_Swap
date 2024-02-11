@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:24:26 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/08 20:55:48 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:19:44 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_push(t_node *node, int len, int witch)
 		p_b(node);
 	else
 		p_a(node);
+	len--;
 	return (len);
 }
 
@@ -73,31 +74,4 @@ int	if_sorted(int *a, int size, int order)
 		}
 		return (1);
 	}
-}
-
-void	r_r_r(t_node *node)
-{
-	int	j;
-	int	i;
-
-	if (node->a_size == 0 || node->a_size == 1 || (node->b_size == 0
-			|| node->b_size == 1))
-		return ;
-	i = node->a_size - 1;
-	j = node->a[i];
-	while (i)
-	{
-		node->a[i] = node->a[i - 1];
-		i--;
-	}
-	node->a[i] = j;
-	i = node->b_size - 1;
-	j = node->b[i];
-	while (i)
-	{
-		node->b[i] = node->b[i - 1];
-		i--;
-	}
-	node->b[i] = j;
-	ft_printf("rrr\n");
 }

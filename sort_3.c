@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 14:13:05 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/08 20:55:47 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:25:18 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	sort_3b(t_node *node, int len)
 				s_a(node);
 			else if (len == 1 || (len >= 2 && node->b[0] > node->b[1])
 				|| (len == 3 && node->b[0] > node->b[2]))
-				len = ft_push(node, len, 1) - 1;
+				len = ft_push(node, len, 1);
 			else if (len == 0)
 				return (0);
 			else
@@ -85,7 +85,7 @@ void	sort_3ab(t_node *node, int len)
 				s_a(node);
 			else if (len == 3 && !(node->a[2] > node->a[0]
 					&& node->a[2] > node->a[1]))
-				len = ft_push(node, len, 0) - 1;
+				len = ft_push(node, len, 0);
 			else if (node->a[0] > node->a[1])
 				s_a(node);
 			else if (len)

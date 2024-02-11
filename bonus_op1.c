@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_a.c                                     :+:      :+:    :+:   */
+/*   bonus_op1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 13:36:35 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/11 19:25:31 by btvildia         ###   ########.fr       */
+/*   Created: 2024/02/11 14:38:43 by btvildia          #+#    #+#             */
+/*   Updated: 2024/02/11 20:07:30 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	s_a(t_node *node)
+void	b_s_a(t_node *node)
 {
 	int	i;
 
@@ -22,10 +22,9 @@ void	s_a(t_node *node)
 	i = node->a[0];
 	node->a[0] = node->a[1];
 	node->a[1] = i;
-	ft_printf("sa\n");
 }
 
-void	p_a(t_node *node)
+void	b_p_a(t_node *node)
 {
 	int	i;
 
@@ -33,26 +32,19 @@ void	p_a(t_node *node)
 	{
 		node->a_size++;
 		i = node->a_size;
-		while (i > 0)
-		{
+		while (--i > 0)
 			node->a[i] = node->a[i - 1];
-			i--;
-		}
 		node->a[0] = node->b[0];
-		i = 0;
+		i = -1;
 		node->b_size--;
-		while (i < node->b_size)
-		{
+		while (++i < node->b_size)
 			node->b[i] = node->b[i + 1];
-			i++;
-		}
-		ft_printf("pa\n");
 	}
 	else
 		return ;
 }
 
-void	r_a(t_node *node)
+void	b_r_a(t_node *node)
 {
 	int	j;
 	int	i;
@@ -68,10 +60,9 @@ void	r_a(t_node *node)
 		i++;
 	}
 	node->a[i - 1] = j;
-	ft_printf("ra\n");
 }
 
-void	r_r_a(t_node *node)
+void	b_r_r_a(t_node *node)
 {
 	int	j;
 	int	i;
@@ -86,5 +77,20 @@ void	r_r_a(t_node *node)
 		i--;
 	}
 	node->a[i] = j;
-	ft_printf("rra\n");
+}
+
+void	b_s_s(t_node *node)
+{
+	int	j;
+
+	if (node->a_size == 0 || node->a_size == 1 || (node->b_size == 0
+			|| node->b_size == 1))
+		return ;
+	j = 0;
+	j = node->a[0];
+	node->a[0] = node->a[1];
+	node->a[1] = j;
+	j = node->b[0];
+	node->b[0] = node->b[1];
+	node->b[1] = j;
 }
