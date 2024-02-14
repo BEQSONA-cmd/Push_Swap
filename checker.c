@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:27 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/11 20:05:30 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/14 19:30:10 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ void	put_swap(t_node *node)
 	{
 		c = get_next_line(0);
 		if (ft_strcmp(c, "\n") == 0)
+		{
+			free(c);
 			break ;
+		}
 		make_swap(node, c);
 		free(c);
 	}
@@ -82,6 +85,7 @@ void	check_swap(char **c, int size)
 	while (i < size)
 	{
 		node.a[i] = ft_atoi(c[i]);
+		free(c[i]);
 		i++;
 	}
 	if_doubles(node.a, size);
@@ -100,7 +104,8 @@ int	main(int ac, char **av)
 	int		i;
 	char	**c;
 
-	c = malloc(sizeof(char *) * ac);
+	if (ac >= 3)
+		c = malloc(sizeof(char *) * ac);
 	i = 0;
 	if (ac == 2)
 	{
@@ -110,8 +115,6 @@ int	main(int ac, char **av)
 	}
 	else if (ac >= 3)
 	{
-		if (c == NULL)
-			ft_error("Error");
 		while (i < ac - 1)
 		{
 			c[i] = av[i + 1];
