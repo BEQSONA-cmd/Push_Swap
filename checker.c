@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:48:27 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/14 19:30:10 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/02/14 19:45:22 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	put_swap(t_node *node)
 	}
 }
 
-void	check_swap(char **c, int size)
+void	check_swap(char **c, int size, int check)
 {
 	t_node	node;
 	int		i;
@@ -85,12 +85,12 @@ void	check_swap(char **c, int size)
 	while (i < size)
 	{
 		node.a[i] = ft_atoi(c[i]);
-		free(c[i]);
+		if (check == 1)
+			free(c[i]);
 		i++;
 	}
 	if_doubles(node.a, size);
 	put_swap(&node);
-	i = 0;
 	if (if_sorted(node.a, size, 0) != 0)
 		ft_printf("OK\n");
 	else
@@ -111,7 +111,7 @@ int	main(int ac, char **av)
 	{
 		i = ft_count(av[1]);
 		c = ft_split(av[1]);
-		check_swap(c, i);
+		check_swap(c, i, 1);
 	}
 	else if (ac >= 3)
 	{
@@ -121,7 +121,7 @@ int	main(int ac, char **av)
 			i++;
 		}
 		c[i] = NULL;
-		check_swap(c, i);
+		check_swap(c, i, 0);
 	}
 	free(c);
 	return (0);
