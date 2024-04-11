@@ -18,10 +18,6 @@ SRC = sources/get_next_line_utils.c\
 
 OBJ = $(SRC:.c=.o)
 
-B_SRC = push_swap.c
-
-B_OBJ = $(B_SRC:.c=.o)
-
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
@@ -29,12 +25,10 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ) 
-	$(CC) $(CFLAGS) $(NAME) push_swap.c -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC) push_swap.c -o $(NAME)
 
 bonus:	$(OBJ) $(B_OBJ)
-	ar rc $(B_NAME) $(OBJ) $(B_OBJ)
-	$(CC) $(CFLAGS) $(B_NAME) checker.c -o $(B_NAME)
+	$(CC) $(CFLAGS) $(SRC) checker.c -o $(B_NAME)
 
 test: $(NAME)
 	$(CC) $(CFLAGS) main.c
@@ -44,7 +38,6 @@ test: $(NAME)
 
 clean:
 	rm -f $(OBJ)
-	rm -f $(B_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

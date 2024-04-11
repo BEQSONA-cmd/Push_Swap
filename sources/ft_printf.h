@@ -6,7 +6,7 @@
 /*   By: btvildia <btvildia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 20:55:19 by btvildia          #+#    #+#             */
-/*   Updated: 2024/02/09 20:16:58 by btvildia         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:32:06 by btvildia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_atoi(const char *str);
 char	*ft_nline(char *s, int c);
 char	*ft_strjoin_null(char *s2);
 int		ft_find_char(int c, int i);
-int		ft_ptr(uintptr_t nb, int j);
+int		ft_ptr(unsigned int nb, int j);
 int		ft_find_str(char *a, int i);
 int		ft_find_number(int n, int i);
 int		ft_printf(const char *a, ...);
@@ -44,7 +44,7 @@ int		ft_strcmp(char *s1, char *s2);
 int		ft_find_hexup(size_t n, int i);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_find_hexlow(size_t n, int i);
-int		ft_find_ptr(uintptr_t ptr, int j);
+int		ft_find_ptr(unsigned int ptr, int j);
 char	*ft_reallocate(char *s1, char *s2);
 int		ft_find_uns(unsigned int n, int i);
 char	*ft_strncpy(char *s1, char *s2, int n);
