@@ -30,12 +30,6 @@ $(NAME): $(OBJ)
 bonus:	$(OBJ) $(B_OBJ)
 	$(CC) $(CFLAGS) $(SRC) checker.c -o $(B_NAME)
 
-test: $(NAME)
-	$(CC) $(CFLAGS) main.c
-	make clean
-	clear
-	./a.out
-
 clean:
 	rm -f $(OBJ)
 
